@@ -1,5 +1,13 @@
 word=input("please enter a string: ")
-reversed_word= word[::-1]
+clean_word = word.replace(" ", "").replace(".", "").replace(",", "").lower()
+reversed_word = ""
+index = len(clean_word) - 1
 
-if reversed_word==word: print(f"'{word}' is a palindrome")
-else: print(f"'{word}' is not a palindrome")
+while index >= 0: 
+    reversed_word += clean_word [index] 
+    index -= 1
+
+if reversed_word==clean_word:
+    print(f"'{word}' is a palindrome")
+else:
+    print(f"'{word}' is not a palindrome")
